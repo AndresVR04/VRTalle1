@@ -33,20 +33,22 @@ function inic(){
         if(numero != aleatorio){
             cont += 1;
             datos.push(numero);
+
+            if(numero < 1 || numero > 100){
+                numero= prompt("Escribir un numero dentro del rango...");
+            }else if(numero == aleatorio){
+                document.getElementById("mensaje").innerHTML= "FELICIDADES, LO ENCONTRASTE!!!!";
+            }else if(numero < aleatorio){
+                numero= prompt("El numero es mayor al ingresado...");
+            }else if(numero > aleatorio){
+                numero= prompt("El numero es menor al ingresado...");
+        
+            }
         }
         
     } while (numero != aleatorio);
 
-    if(numero < 1 || numero > 100){
-        document.getElementById("mensaje").innerHTML= "Escribir un numero dentro del rango...";
-    }else if(numero == aleatorio){
-        document.getElementById("mensaje").innerHTML="FELICIDADES, LO ENCONTRASTE!!!!";
-    }else if(numero < aleatorio){
-        document.getElementById("mensaje").innerHTML= "El numero es mayor al ingresado...";
-    }else if(numero > aleatorio){
-        document.getElementById("mensaje").innerHTML= "El numero es menor al ingresado...";
-
-    }
+    
 
 
     if(cont==1){
